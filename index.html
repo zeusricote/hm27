@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HackMadrid%27 — Comunidad de hacking más irreverente de Madrid. Talleres, CTF, charlas y cultura hacker desde 2017. Miembros de la red internacional %27.">
+  <meta name="theme-color" content="#8B0000">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logos/cropped-logo_hackmadrid_sin_fondo-32x32.png">
+  <link rel="shortcut icon" href="assets/images/logos/cropped-logo_hackmadrid_sin_fondo-32x32.png">
+  <title>HackMadrid%27 — Comunidad Hacker</title>
+  <link rel="stylesheet" href="css/cyberpunk-style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous">
+</head>
+<body>
+
+  <!-- Mobile Menu Checkbox -->
+  <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-checkbox" aria-hidden="true">
+  <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox">
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul class="nav-left">
+          <li><a href="index.html">HACKMADRID'</a></li>
+          <li class="menu-item-has-children">
+            <a href="eventos.html">EVENTOS</a>
+            <ul class="sub-menu">
+              <li><a href="eventos.html#talleres">Talleres</a></li>
+              <li><a href="eventos.html#presentaciones">Charlas</a></li>
+              <li><a href="eventos.html#capture-the-flag">Capture the Flag</a></li>
+              <li><a href="eventos.html#worldparty">WorldParty</a></li>
+              <li><a href="eventos.html#cursos">Cursos</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#comunicaciones">RED %27</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-logo">
+        <a href="index.html" aria-label="HackMadrid Home">
+          <img src="assets/images/logos/logo_hackmadrid_sin_fondo.png" alt="HackMadrid Logo" width="96" height="96">
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación secundaria">
+        <ul class="nav-right">
+          <li><a href="https://anchor.fm/radio27" target="_blank" rel="noopener noreferrer">RADIO'</a></li>
+          <li><a href="merchdacing.html">MERCH</a></li>
+          <li class="nav-hacker-toggle">
+            <label for="theme-toggle" class="hacker-toggle-btn" aria-label="Activar modo hacker">
+              [HACKER]<span class="toggle-track"><span class="toggle-thumb"></span></span>
+            </label>
+          </li>
+        </ul>
+      </nav>
+
+      <label for="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Abrir menú">☰</label>
+    </div>
+  </header>
+
+  <!-- Social Bar -->
+  <div class="social-bar">
+    <div class="social-bar-inner">
+      <a href="https://t.me/hackmadrid" target="_blank" rel="noopener noreferrer">Telegram</a>
+      <span class="social-sep">·</span>
+      <a href="https://twitch.tv/hackmadrid" target="_blank" rel="noopener noreferrer">Twitch</a>
+      <span class="social-sep">·</span>
+      <a href="https://mastodon.social/@hackmadrid" target="_blank" rel="noopener noreferrer">Mastodon</a>
+      <span class="social-sep">·</span>
+      <a href="https://www.meetup.com/hackmadrid-27/" target="_blank" rel="noopener noreferrer">Meetup</a>
+      <span class="social-sep">·</span>
+      <a href="https://github.com/HackMadrid" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="social-sep">·</span>
+      <a href="https://twitter.com/hackmadrid" target="_blank" rel="noopener noreferrer">Twitter/X</a>
+      <span class="social-sep">·</span>
+      <a href="https://youtube.com/@hackmadrid" target="_blank" rel="noopener noreferrer">YouTube</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="glitch">HACKMADRID%27:~$</h1>
+          <p class="hero-subtitle">// La comunidad de hacking más irreverente</p>
+          <div class="hero-actions">
+            <a href="https://www.meetup.com/hackmadrid-27/" target="_blank" rel="noopener noreferrer" class="btn">UNIRSE A LA COMUNIDAD</a>
+            <a href="eventos.html" class="btn">VER EVENTOS</a>
+            <a href="https://t.me/hackmadrid" target="_blank" rel="noopener noreferrer" class="btn">UNIRSE AL TELEGRAM</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END HERO -->
+
+    <!-- ===== STATS BAR ===== -->
+    <div class="stats-bar">
+      <div class="stats-inner">
+        <div class="stat-item">
+          <a href="https://t.me/hackmadrid" target="_blank" rel="noopener noreferrer" class="stat-link">
+            <span class="stat-number">3.000+</span>
+            <span class="stat-label">Miembros Telegram</span>
+          </a>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">2017</span>
+          <span class="stat-label">Fundación</span>
+        </div>
+        <div class="stat-item">
+          <a href="https://www.meetup.com/hackmadrid-27/" target="_blank" rel="noopener noreferrer" class="stat-link">
+            <span class="stat-number">5.000+</span>
+            <span class="stat-label">Miembros Meetup</span>
+          </a>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">%27</span>
+          <span class="stat-label">Red Internacional</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 1. ABOUT ===== -->
+    <section id="nosotros" class="section">
+      <div class="container">
+        <h2>> HACKMADRID%27 // COMUNIDAD DE CULTURA HACKER</h2>
+
+        <div class="content-box">
+          <p>HackMadrid%27 es una comunidad abierta compuesta por perfiles muy diversos: desde quienes dan sus primeros pasos en el mundo del hacking hasta veteranos con décadas de experiencia en proyectos para universidades, comunidades, gobiernos y empresas de todo el mundo. Aquí la etiqueta no importa, importa el conocimiento y la actitud.</p>
+        </div>
+
+        <div class="content-box">
+          <p>Los miembros de HackMadrid se esfuerzan por estar a la vanguardia en investigación y experimentación. Participamos activamente en las conferencias de referencia del sector: DEF CON, Black Hat, HOPE, OWASP AppSec, Chaos Computer Club, Navaja Negra y más.</p>
+          <a href="index.html#conferencias-es" class="btn btn-lg">CONFERENCIAS</a>
+        </div>
+
+        <div class="content-box">
+          <p>Desarrollamos e impulsamos la participación de la comunidad hacker a través de reuniones regulares, presentaciones técnicas, talleres prácticos y CTFs.</p>
+        </div>
+
+        <div class="content-box">
+          <p>HackMadrid%27 pertenece a la red internacional de hacking <strong>Por Ciento 27 (%27)</strong>, junto a HackMiami, Hack The Bay (San Francisco), HackBCN y PacificHackers. Apostamos por el Software Libre, la colaboración entre comunidades y los eventos multicomunitarios.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 2. CONFERENCIAS ESPAÑA ===== -->
+    <section id="conferencias-es" class="section section-dark">
+      <div class="container">
+        <h2>> ESCENA HACKER ESPAÑOLA // CONFERENCIAS</h2>
+        <div class="content-box">
+          <p>El ecosistema de seguridad informática en España cuenta con algunas de las conferencias más potentes de Europa. HackMadrid participa y colabora activamente con esta escena.</p>
+        </div>
+
+        <div class="conf-hover-grid">
+          <a href="https://rootedcon.com" target="_blank" rel="noopener noreferrer" class="conf-hover-card">
+            <div class="conf-card-name">// RootedCON <span class="conf-card-month">Mar</span></div>
+            <div class="conf-card-body">Madrid — La conferencia de ciberseguridad más grande de España. Técnica, masiva y con ponentes internacionales.<span class="conf-card-link">→ rootedcon.com</span></div>
+          </a>
+          <a href="https://hackon.es" target="_blank" rel="noopener noreferrer" class="conf-hover-card">
+            <div class="conf-card-name">// HackOn <span class="conf-card-month">Feb</span></div>
+            <div class="conf-card-body">Madrid — Conferencia técnica con CTF, talleres y charlas de alto nivel. Comunidad muy activa.<span class="conf-card-link">→ hackon.es</span></div>
+          </a>
+          <a href="https://navajanegra.com" target="_blank" rel="noopener noreferrer" class="conf-hover-card">
+            <div class="conf-card-name">// Navaja Negra <span class="conf-card-month">Oct</span></div>
+            <div class="conf-card-body">Albacete — Seguridad ofensiva, reversing y exploiting. Ambiente técnico, cercano y sin corporativismos.<span class="conf-card-link">→ navajanegra.com</span></div>
+          </a>
+          <a href="https://noconname.org" target="_blank" rel="noopener noreferrer" class="conf-hover-card">
+            <div class="conf-card-name">// No cON Name <span class="conf-card-month">Oct</span></div>
+            <div class="conf-card-body">Barcelona — Una de las más veteranas de España. Hacking e investigación underground desde 2003.<span class="conf-card-link">→ noconname.org</span></div>
+          </a>
+          <a href="https://bsides.barcelona" target="_blank" rel="noopener noreferrer" class="conf-hover-card">
+            <div class="conf-card-name">// BSides Barcelona <span class="conf-card-month">May</span></div>
+            <div class="conf-card-body">Barcelona — Comunidad open, investigación y seguridad sin filtros corporativos. Formato participativo.<span class="conf-card-link">→ bsides.barcelona</span></div>
+          </a>
+          <a href="https://securitycongress.euskalhack.org" target="_blank" rel="noopener noreferrer" class="conf-hover-card">
+            <div class="conf-card-name">// EuskalHack <span class="conf-card-month">Jun</span></div>
+            <div class="conf-card-body">San Sebastián — Referente del norte. Seguridad, IoT y sistemas industriales con ponentes top.<span class="conf-card-link">→ euskalhack.org</span></div>
+          </a>
+          <a href="https://sh3llcon.es" target="_blank" rel="noopener noreferrer" class="conf-hover-card">
+            <div class="conf-card-name">// Sh3llcon <span class="conf-card-month">Ene</span></div>
+            <div class="conf-card-body">Reinosa — Hacking y privacidad en el norte. Ponentes nacionales e internacionales en formato íntimo.<span class="conf-card-link">→ sh3llcon.es</span></div>
+          </a>
+          <a href="https://uad360.es" target="_blank" rel="noopener noreferrer" class="conf-hover-card">
+            <div class="conf-card-name">// UAD360 <span class="conf-card-month">Jun</span></div>
+            <div class="conf-card-body">Málaga — Congreso universitario de ciberseguridad con CTF y talleres prácticos. Gran comunidad local.<span class="conf-card-link">→ uad360.es</span></div>
+          </a>
+          <a href="https://honeycon.eu" target="_blank" rel="noopener noreferrer" class="conf-hover-card">
+            <div class="conf-card-name">// HoneyCON <span class="conf-card-month">Nov</span></div>
+            <div class="conf-card-body">Guadalajara — Charlas técnicas, talleres y CTF. Crecimiento constante en un formato familiar y accesible.<span class="conf-card-link">→ honeycon.eu</span></div>
+          </a>
+          <a href="https://hackron.com" target="_blank" rel="noopener noreferrer" class="conf-hover-card">
+            <div class="conf-card-name">// Hackron <span class="conf-card-month">May</span></div>
+            <div class="conf-card-body">Las Palmas, Canarias — La conferencia de seguridad de las islas. Cultura hacker al sol del Atlántico.<span class="conf-card-link">→ hackron.com</span></div>
+          </a>
+          <a href="https://secadmin.es" target="_blank" rel="noopener noreferrer" class="conf-hover-card">
+            <div class="conf-card-name">// SecAdmin <span class="conf-card-month">Nov</span></div>
+            <div class="conf-card-body">Sevilla — Seguridad y administración de sistemas en el sur. Comunidad activa andaluza con décadas de historia.<span class="conf-card-link">→ secadmin.es</span></div>
+          </a>
+          <a href="https://www.morteruelo.net" target="_blank" rel="noopener noreferrer" class="conf-hover-card">
+            <div class="conf-card-name">// MorterueloCON <span class="conf-card-month">Feb</span></div>
+            <div class="conf-card-body">Cuenca — La más castiza. Ambiente íntimo, cultura hacker en estado puro y mucho morteruelo.<span class="conf-card-link">→ morteruelo.net</span></div>
+          </a>
+          <a href="https://bitupalicante.com" target="_blank" rel="noopener noreferrer" class="conf-hover-card">
+            <div class="conf-card-name">// BitUP <span class="conf-card-month">Nov</span></div>
+            <div class="conf-card-body">Alicante — Congreso de seguridad levantino con gran participación de la comunidad local y universitaria.<span class="conf-card-link">→ bitupalicante.com</span></div>
+          </a>
+          <a href="https://asturcon.tech" target="_blank" rel="noopener noreferrer" class="conf-hover-card">
+            <div class="conf-card-name">// AsturCON <span class="conf-card-month">Nov</span></div>
+            <div class="conf-card-body">Asturias — Referente del Cantábrico. Seguridad, hacking y comunidad en el norte verde de España.<span class="conf-card-link">→ asturcon.tech</span></div>
+          </a>
+          <a href="https://hack-en.org" target="_blank" rel="noopener noreferrer" class="conf-hover-card">
+            <div class="conf-card-name">// Hack-én <span class="conf-card-month">May</span></div>
+            <div class="conf-card-body">Jaén — Hacking ético y ciberseguridad en Andalucía. Comunidad joven y en crecimiento constante.<span class="conf-card-link">→ hack-en.org</span></div>
+          </a>
+          <a href="https://ciberseg.uah.es" target="_blank" rel="noopener noreferrer" class="conf-hover-card">
+            <div class="conf-card-name">// CyberSeg <span class="conf-card-month">Ene</span></div>
+            <div class="conf-card-body">Alcalá de Henares — Congreso universitario de ciberseguridad de la UAH. Puente entre academia e industria.<span class="conf-card-link">→ ciberseg.uah.es</span></div>
+          </a>
+          <a href="https://morcillaconf.es" target="_blank" rel="noopener noreferrer" class="conf-hover-card">
+            <div class="conf-card-name">// MorcillaCONF <span class="conf-card-month">Sep</span></div>
+            <div class="conf-card-body">Burgos — Pequeña, técnica y con mucho sabor. Comunidad castellana hacker en formato íntimo.<span class="conf-card-link">→ morcillaconf.es</span></div>
+          </a>
+          <a href="https://x1redmassegura.com" target="_blank" rel="noopener noreferrer" class="conf-hover-card">
+            <div class="conf-card-name">// X1RedMasSegura <span class="conf-card-month">Ene</span></div>
+            <div class="conf-card-body">Madrid — Jornadas de concienciación y buenas prácticas de seguridad digital. Amplia difusión nacional.<span class="conf-card-link">→ x1redmassegura.com</span></div>
+          </a>
+          <a href="https://vicon.gal" target="_blank" rel="noopener noreferrer" class="conf-hover-card">
+            <div class="conf-card-name">// Vicon <span class="conf-card-month">Abr</span></div>
+            <div class="conf-card-body">Vigo — Conferencia de seguridad gallega. Comunidad activa en el noroeste con ponentes nacionales.<span class="conf-card-link">→ vicon.gal</span></div>
+          </a>
+          <a href="https://conpilar.es" target="_blank" rel="noopener noreferrer" class="conf-hover-card">
+            <div class="conf-card-name">// CONPilar <span class="conf-card-month">Oct</span></div>
+            <div class="conf-card-body">Zaragoza — Seguridad y hacking en la capital aragonesa. Evento anual en el entorno de las Fiestas del Pilar.<span class="conf-card-link">→ conpilar.es</span></div>
+          </a>
+        </div>
+
+        <!-- Mapa OpenStreetMap con Leaflet -->
+        <h3 style="margin-bottom:1rem;">> MAPA // CONFERENCIAS EN ESPAÑA</h3>
+        <div id="spain-map" style="height:420px; border: 2px solid var(--border-primary); box-shadow: 0 0 0 1px var(--crimson);"></div>
+      </div>
+    </section>
+
+    <!-- ===== 3. EVENT TYPES ===== -->
+    <section id="event-types" class="section">
+      <div class="container">
+        <h2>> TIPOS DE EVENTOS</h2>
+
+        <div class="event-grid">
+          <div class="event-card">
+            <h3>// TALLERES</h3>
+            <p>Sesiones prácticas sobre herramientas, técnicas y sistemas operativos: Kali Linux, Parrot, herramientas OSINT, pentesting web, reversing y más.</p>
+            <a href="eventos.html#talleres" class="btn">ACCEDER</a>
+          </div>
+
+          <div class="event-card">
+            <h3>// CHARLAS</h3>
+            <p>Presentaciones técnicas sobre ciberseguridad, privacidad, criptografía, malware, redes y cultura hacker, por miembros y colaboradores.</p>
+            <a href="eventos.html#presentaciones" class="btn">EXPLORAR</a>
+          </div>
+
+          <div class="event-card">
+            <h3>// CAPTURE THE FLAG</h3>
+            <p>Competencias CTF organizadas y jugadas en comunidad. Trabajamos para que sean validadas por INCIBE y participar en el circuito nacional.</p>
+            <a href="eventos.html#capture-the-flag" class="btn">HACKEAR</a>
+          </div>
+
+          <div class="event-card">
+            <h3>// WORLDPARTY</h3>
+            <p>Evento anual multicomunitario de la red %27 con HackMiami, HackBCN, Hack The Bay y PacificHackers. Online e in-person.</p>
+            <a href="eventos.html#worldparty" class="btn">VER EDICIONES</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. TIMELINE ===== -->
+    <section id="historia" class="section section-dark">
+      <div class="container">
+        <h2>> HISTORIAL // EVENTOS DESTACADOS</h2>
+
+        <div class="events-timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-date">Mar 2026</div>
+            <div class="timeline-content">
+              <h4>Diseño de Plataformas Agénticas</h4>
+              <p>Taller sobre diseño de plataformas de agentes IA en Madrid Innovation Lab. 78 asistentes.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">Oct 2023</div>
+            <div class="timeline-content">
+              <h4>WorldParty2k23 — Presencial</h4>
+              <p>Edición presencial del WorldParty con presentaciones sobre threat modeling por profesionales de Red Hat y otras organizaciones.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">Oct 2021</div>
+            <div class="timeline-content">
+              <h4>WorldParty2k21 — Online</h4>
+              <p>Evento multicomunitario con HackMadrid, HackBCN, HackMiami, Hack The Bay y PacificHackers. Cuatro conferencias en paralelo.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2020</div>
+            <div class="timeline-content">
+              <h4>WorldParty2k20 — Adaptación COVID</h4>
+              <p>Primera edición completamente online de la conferencia anual, manteniendo la comunidad activa durante el confinamiento.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2019</div>
+            <div class="timeline-content">
+              <h4>Tech.Party 2019</h4>
+              <p>Edición Tech del WorldParty. Lanzamiento de la plataforma CTF oficial (gitlab.com/HackMadrid/ctf-platform).</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2018</div>
+            <div class="timeline-content">
+              <h4>Linux.Party 2018 — Fundación</h4>
+              <p>Primera edición del evento anual. Fundación de HackMadrid%27 e integración en la red internacional %27.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 2rem; text-align: center;">
+          <a href="eventos.html" class="btn">VER TODOS LOS EVENTOS</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. MISIÓN & VALORES ===== -->
+    <section id="objetivos" class="section">
+      <div class="container">
+        <h2>> OBJETIVOS // MISIÓN &amp; VALORES</h2>
+
+        <div class="content-box">
+          <p>La seguridad cibernética, la privacidad, el anonimato y la gestión crítica de la información nos permiten comprender los peligros y trampas que esconde la sociedad digital moderna. Nuestra filosofía: <em>"Only knowledge makes us Free"</em>.</p>
+        </div>
+
+        <ul class="terminal-list">
+          <li>Construir una comunidad activa y vibrante en torno a la cultura «hacking» — no como negocio, sino como estilo de vida.</li>
+          <li>Adquirir conocimiento técnico profundo mediante el estudio, la investigación y la experimentación constante.</li>
+          <li>Desarrollar una actitud ética que nos permita usar el conocimiento para hacer del mundo un lugar mejor.</li>
+          <li>Fomentar la privacidad digital, el anonimato y el pensamiento crítico ante la vigilancia masiva.</li>
+          <li>Compartir libremente el conocimiento: talleres gratuitos, writeups, materiales abiertos a la comunidad.</li>
+          <li>Mantener vínculos activos con la red %27 y otras comunidades hackers a nivel internacional.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 6. HACKERS CAROUSEL ===== -->
+    <section id="hackers" class="section section-dark">
+      <div class="container">
+        <h2>> LOS HACKERS ESCRIBIERON:</h2>
+
+        <div class="carousel">
+          <input type="radio" name="carousel" id="slide-1" class="carousel-radio" checked aria-hidden="true">
+          <input type="radio" name="carousel" id="slide-2" class="carousel-radio" aria-hidden="true">
+
+          <div class="carousel-container">
+            <!-- Slide 1 -->
+            <div class="carousel-slide">
+              <a href="index.html#modal-mitnick" class="hacker-card">
+                <div class="hacker-image">
+                  <img src="assets/images/hackers/hacker-KevinMitnick.png" alt="Kevin Mitnick" loading="lazy" width="200" height="200">
+                  <div class="quote-overlay">
+                    <p>"Las organizaciones gastan millones en firewalls y dispositivos de seguridad, pero tiran el dinero porque ninguna medida cubre el eslabón más débil: las personas."</p>
+                  </div>
+                </div>
+                <div class="hacker-name">Kevin Mitnick</div>
+              </a>
+
+              <a href="index.html#modal-schneier" class="hacker-card">
+                <div class="hacker-image">
+                  <img src="assets/images/hackers/hacker-BruceSchneier.png" alt="Bruce Schneier" loading="lazy" width="200" height="200">
+                  <div class="quote-overlay">
+                    <p>"Si piensas que la tecnología puede solucionar tus problemas de seguridad, está claro que no entiendes ni los problemas ni la tecnología."</p>
+                  </div>
+                </div>
+                <div class="hacker-name">Bruce Schneier</div>
+              </a>
+
+              <a href="index.html#modal-torvalds" class="hacker-card">
+                <div class="hacker-image">
+                  <img src="assets/images/hackers/hacker-LinusTorvalds.png" alt="Linus Torvalds" loading="lazy" width="200" height="200">
+                  <div class="quote-overlay">
+                    <p>"Sólo los débiles hacen copias de seguridad. Las personas de verdad suben sus cosas a un FTP y dejan que el mundo haga mirror."</p>
+                  </div>
+                </div>
+                <div class="hacker-name">Linus Torvalds</div>
+              </a>
+
+              <a href="index.html#modal-stallman" class="hacker-card">
+                <div class="hacker-image">
+                  <img src="assets/images/hackers/hacker-RichardStallman.png" alt="Richard Stallman" loading="lazy" width="200" height="200">
+                  <div class="quote-overlay">
+                    <p>"Enseñar a los niños el uso de software libre en las escuelas formará individuos con sentido de libertad."</p>
+                  </div>
+                </div>
+                <div class="hacker-name">Richard Stallman</div>
+              </a>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+              <a href="index.html#modal-raymond" class="hacker-card">
+                <div class="hacker-image">
+                  <img src="assets/images/hackers/hacker-EricRaymond.png" alt="Eric Raymond" loading="lazy" width="200" height="200">
+                  <div class="quote-overlay">
+                    <p>"Saber romper medidas de seguridad no te hace hacker, igual que saber hacer un puente en un coche no te convierte en ingeniero de automoción."</p>
+                  </div>
+                </div>
+                <div class="hacker-name">Eric Raymond</div>
+              </a>
+
+              <a href="index.html#modal-swartz" class="hacker-card">
+                <div class="hacker-image">
+                  <img src="assets/images/hackers/hacker-AaronSwartz.png" alt="Aaron Swartz" loading="lazy" width="200" height="200">
+                  <div class="quote-overlay">
+                    <p>"Compartir no es inmoral — es un imperativo moral. Solo aquellos cegados por la codicia se negarían a hacerle una copia a un amigo."</p>
+                  </div>
+                </div>
+                <div class="hacker-name">Aaron Swartz</div>
+              </a>
+
+              <a href="index.html#modal-mendez" class="hacker-card">
+                <div class="hacker-image">
+                  <img src="assets/images/hackers/hacker-JohanManuelMendez.png" alt="Johan Manuel Mendez" loading="lazy" width="200" height="200">
+                  <div class="quote-overlay">
+                    <p>"La tarea del hacker no es destruir, sino utilizar sus conocimientos en favor de la libertad y la igualdad social."</p>
+                  </div>
+                </div>
+                <div class="hacker-name">Johan Manuel Mendez</div>
+              </a>
+
+              <a href="index.html#modal-neumann" class="hacker-card">
+                <div class="hacker-image">
+                  <img src="assets/images/hackers/hacker-JohnVonNeumann.png" alt="John Von Neumann" loading="lazy" width="200" height="200">
+                  <div class="quote-overlay">
+                    <p>"Podría parecer que hemos llegado a los límites de la informática, aunque uno debe ser prudente: esas afirmaciones suenan bastante tontas años después."</p>
+                  </div>
+                </div>
+                <div class="hacker-name">John Von Neumann</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Arrows slide 1 -->
+          <label for="slide-2" class="carousel-arrow carousel-arrow-left"  data-slide="1" aria-label="Slide anterior">‹</label>
+          <label for="slide-2" class="carousel-arrow carousel-arrow-right" data-slide="1" aria-label="Siguiente slide">›</label>
+          <!-- Arrows slide 2 -->
+          <label for="slide-1" class="carousel-arrow carousel-arrow-left"  data-slide="2" aria-label="Slide anterior">‹</label>
+          <label for="slide-1" class="carousel-arrow carousel-arrow-right" data-slide="2" aria-label="Siguiente slide">›</label>
+
+          <div class="carousel-dots">
+            <label for="slide-1" class="carousel-dot" aria-label="Ir al slide 1"></label>
+            <label for="slide-2" class="carousel-dot" aria-label="Ir al slide 2"></label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== QUOTE MODALS ===== -->
+    <div id="modal-mitnick" class="quote-modal">
+      <div class="modal-content">
+        <a href="index.html#hackers" class="modal-close" aria-label="Cerrar">&times;</a>
+        <div class="modal-image"><img src="assets/images/hackers/hacker-KevinMitnick.png" alt="Kevin Mitnick"></div>
+        <h3>Kevin Mitnick</h3>
+        <blockquote><p>"Las organizaciones gastan millones de dólares en firewalls y dispositivos de seguridad, pero tiran el dinero porque ninguna de estas medidas cubre el eslabón más débil de la cadena de seguridad: la gente que usa y administra los ordenadores."</p></blockquote>
+      </div>
+    </div>
+
+    <div id="modal-schneier" class="quote-modal">
+      <div class="modal-content">
+        <a href="index.html#hackers" class="modal-close" aria-label="Cerrar">&times;</a>
+        <div class="modal-image"><img src="assets/images/hackers/hacker-BruceSchneier.png" alt="Bruce Schneier"></div>
+        <h3>Bruce Schneier</h3>
+        <blockquote><p>"Si piensas que la tecnología puede solucionar tus problemas de seguridad, está claro que ni entiendes los problemas ni entiendes la tecnología."</p></blockquote>
+      </div>
+    </div>
+
+    <div id="modal-torvalds" class="quote-modal">
+      <div class="modal-content">
+        <a href="index.html#hackers" class="modal-close" aria-label="Cerrar">&times;</a>
+        <div class="modal-image"><img src="assets/images/hackers/hacker-LinusTorvalds.png" alt="Linus Torvalds"></div>
+        <h3>Linus Torvalds</h3>
+        <blockquote><p>"Sólo los débiles hacen copias de seguridad. Las personas de verdad suben sus cosas importantes a un FTP y permiten que el resto del mundo haga un mirror."</p></blockquote>
+      </div>
+    </div>
+
+    <div id="modal-stallman" class="quote-modal">
+      <div class="modal-content">
+        <a href="index.html#hackers" class="modal-close" aria-label="Cerrar">&times;</a>
+        <div class="modal-image"><img src="assets/images/hackers/hacker-RichardStallman.png" alt="Richard Stallman"></div>
+        <h3>Richard Stallman</h3>
+        <blockquote><p>"Enseñar a los niños el uso de software libre en las escuelas formará individuos con sentido de libertad."</p></blockquote>
+      </div>
+    </div>
+
+    <div id="modal-raymond" class="quote-modal">
+      <div class="modal-content">
+        <a href="index.html#hackers" class="modal-close" aria-label="Cerrar">&times;</a>
+        <div class="modal-image"><img src="assets/images/hackers/hacker-EricRaymond.png" alt="Eric Raymond"></div>
+        <h3>Eric Raymond</h3>
+        <blockquote><p>"Saber romper medidas de seguridad no hace que seas hacker, al igual que saber hacer un puente en un coche no te convierte en un ingeniero de automoción."</p></blockquote>
+      </div>
+    </div>
+
+    <div id="modal-swartz" class="quote-modal">
+      <div class="modal-content">
+        <a href="index.html#hackers" class="modal-close" aria-label="Cerrar">&times;</a>
+        <div class="modal-image"><img src="assets/images/hackers/hacker-AaronSwartz.png" alt="Aaron Swartz"></div>
+        <h3>Aaron Swartz</h3>
+        <blockquote><p>"Pero compartir no es inmoral — es un imperativo moral. Sólo aquellos que están cegados por la codicia se negarían a hacerle una copia a un amigo."</p></blockquote>
+      </div>
+    </div>
+
+    <div id="modal-mendez" class="quote-modal">
+      <div class="modal-content">
+        <a href="index.html#hackers" class="modal-close" aria-label="Cerrar">&times;</a>
+        <div class="modal-image"><img src="assets/images/hackers/hacker-JohanManuelMendez.png" alt="Johan Manuel Mendez"></div>
+        <h3>Johan Manuel Mendez</h3>
+        <blockquote><p>"La tarea del hacker no es destruir, sino utilizar sus conocimientos en favor de la libertad y la igualdad social."</p></blockquote>
+      </div>
+    </div>
+
+    <div id="modal-neumann" class="quote-modal">
+      <div class="modal-content">
+        <a href="index.html#hackers" class="modal-close" aria-label="Cerrar">&times;</a>
+        <div class="modal-image"><img src="assets/images/hackers/hacker-JohnVonNeumann.png" alt="John Von Neumann"></div>
+        <h3>John Von Neumann</h3>
+        <blockquote><p>"Podría parecer que hemos llegado a los límites alcanzables por la informática, aunque uno debe ser prudente con estas afirmaciones, pues tienden a sonar bastante tontas al cabo de unos años."</p></blockquote>
+      </div>
+    </div>
+
+    <!-- ===== 7. RED %27 / COMUNIDADES & HACKERSPACES ===== -->
+    <section id="comunicaciones" class="section">
+      <div class="container">
+        <h2>> RED %27 // COMUNIDADES &amp; HACKERSPACES</h2>
+
+        <div class="content-box">
+          <p>HackMadrid%27 forma parte de la red internacional de hacking <strong>Por Ciento 27 (%27)</strong>. Comunidades independientes, unidas por valores comunes: conocimiento libre, ética hacker y colaboración sin fronteras.</p>
+        </div>
+
+        <p class="community-section-label red">// RED %27 — COMUNIDADES HERMANAS</p>
+        <div class="community-grid">
+          <div class="community-card is-27">
+            <h3>// HackMiami</h3>
+            <p>Miami, USA — Una de las comunidades hacker más activas del Caribe y el sur de Florida. Organizan el HackMiami Conference anualmente.</p>
+            <a href="https://hackmiami.org" target="_blank" rel="noopener noreferrer" class="btn">HACKMIAMI.ORG</a>
+          </div>
+          <div class="community-card is-27">
+            <h3>// Hack The Bay</h3>
+            <p>San Francisco, USA — Comunidad de la bahía enfocada en seguridad ofensiva e investigación avanzada en el corazón de Silicon Valley.</p>
+            <a href="https://www.hackthebay.com" target="_blank" rel="noopener noreferrer" class="btn">HACKTHEBAY.COM</a>
+          </div>
+          <div class="community-card is-27">
+            <h3>// HackBCN'</h3>
+            <p>Barcelona, España — Hermana ibérica, comunidad activa en Catalunya con talleres, CTFs y colaboraciones con HackMadrid.</p>
+            <a href="https://hackbcn.cat" target="_blank" rel="noopener noreferrer" class="btn">HACKBCN.CAT</a>
+          </div>
+          <div class="community-card is-27">
+            <h3>// PacificHackers</h3>
+            <p>Costa del Pacífico, USA — Comunidad distribuida enfocada en investigación y herramientas de código abierto.</p>
+            <a href="https://www.meetup.com/pacifichackers/" target="_blank" rel="noopener noreferrer" class="btn">PACIFICHACKERS</a>
+          </div>
+        </div>
+
+        <p class="community-section-label">// HACKERSPACES INTERNACIONALES — EUROPA</p>
+        <div class="hackerspace-grid">
+          <div class="hs-card">
+            <div class="hs-card-city">Hamburg, Alemania</div>
+            <div class="hs-card-name">Chaos Computer Club</div>
+            <a href="https://www.ccc.de" target="_blank" rel="noopener noreferrer">→ ccc.de</a>
+          </div>
+          <div class="hs-card">
+            <div class="hs-card-city">Viena, Austria</div>
+            <div class="hs-card-name">Metalab</div>
+            <a href="https://metalab.at" target="_blank" rel="noopener noreferrer">→ metalab.at</a>
+          </div>
+          <div class="hs-card">
+            <div class="hs-card-city">Berlín, Alemania</div>
+            <div class="hs-card-name">c-base</div>
+            <a href="https://www.c-base.org" target="_blank" rel="noopener noreferrer">→ c-base.org</a>
+          </div>
+          <div class="hs-card">
+            <div class="hs-card-city">Londres, Reino Unido</div>
+            <div class="hs-card-name">London Hackspace</div>
+            <a href="https://london.hackspace.org.uk" target="_blank" rel="noopener noreferrer">→ london.hackspace.org.uk</a>
+          </div>
+          <div class="hs-card">
+            <div class="hs-card-city">La Haya, Países Bajos</div>
+            <div class="hs-card-name">Revspace</div>
+            <a href="https://revspace.nl" target="_blank" rel="noopener noreferrer">→ revspace.nl</a>
+          </div>
+          <div class="hs-card">
+            <div class="hs-card-city">Ámsterdam, Países Bajos</div>
+            <div class="hs-card-name">Technologia Incognita</div>
+            <a href="https://techinc.nl" target="_blank" rel="noopener noreferrer">→ techinc.nl</a>
+          </div>
+          <div class="hs-card">
+            <div class="hs-card-city">Bruselas, Bélgica</div>
+            <div class="hs-card-name">HSBXL</div>
+            <a href="https://hsbxl.be" target="_blank" rel="noopener noreferrer">→ hsbxl.be</a>
+          </div>
+          <div class="hs-card">
+            <div class="hs-card-city">Copenhague, Dinamarca</div>
+            <div class="hs-card-name">Labitat</div>
+            <a href="https://labitat.dk" target="_blank" rel="noopener noreferrer">→ labitat.dk</a>
+          </div>
+          <div class="hs-card">
+            <div class="hs-card-city">Dublín, Irlanda</div>
+            <div class="hs-card-name">TOG</div>
+            <a href="https://www.tog.ie" target="_blank" rel="noopener noreferrer">→ tog.ie</a>
+          </div>
+          <div class="hs-card">
+            <div class="hs-card-city">Atenas, Grecia</div>
+            <div class="hs-card-name">Athens Hackerspace</div>
+            <a href="https://www.hackerspace.gr" target="_blank" rel="noopener noreferrer">→ hackerspace.gr</a>
+          </div>
+        </div>
+
+        <p class="community-section-label">// HACKERSPACES INTERNACIONALES — ESTADOS UNIDOS</p>
+        <div class="hackerspace-grid">
+          <div class="hs-card">
+            <div class="hs-card-city">San Francisco, CA</div>
+            <div class="hs-card-name">Noisebridge</div>
+            <a href="https://www.noisebridge.net" target="_blank" rel="noopener noreferrer">→ noisebridge.net</a>
+          </div>
+          <div class="hs-card">
+            <div class="hs-card-city">Brooklyn, NY</div>
+            <div class="hs-card-name">NYC Resistor</div>
+            <a href="https://www.nycresistor.com" target="_blank" rel="noopener noreferrer">→ nycresistor.com</a>
+          </div>
+          <div class="hs-card">
+            <div class="hs-card-city">Chicago, IL</div>
+            <div class="hs-card-name">Pumping Station: One</div>
+            <a href="https://pumpingstationone.org" target="_blank" rel="noopener noreferrer">→ pumpingstationone.org</a>
+          </div>
+          <div class="hs-card">
+            <div class="hs-card-city">Somerville, MA</div>
+            <div class="hs-card-name">Artisan's Asylum</div>
+            <a href="https://artisansasylum.com" target="_blank" rel="noopener noreferrer">→ artisansasylum.com</a>
+          </div>
+          <div class="hs-card">
+            <div class="hs-card-city">Washington, DC</div>
+            <div class="hs-card-name">HacDC</div>
+            <a href="https://www.hacdc.org" target="_blank" rel="noopener noreferrer">→ hacdc.org</a>
+          </div>
+          <div class="hs-card">
+            <div class="hs-card-city">Denver, CO</div>
+            <div class="hs-card-name">Denhac</div>
+            <a href="https://denhac.org" target="_blank" rel="noopener noreferrer">→ denhac.org</a>
+          </div>
+          <div class="hs-card">
+            <div class="hs-card-city">Dallas, TX</div>
+            <div class="hs-card-name">Dallas Makerspace</div>
+            <a href="https://dallasmakerspace.org" target="_blank" rel="noopener noreferrer">→ dallasmakerspace.org</a>
+          </div>
+          <div class="hs-card">
+            <div class="hs-card-city">Ferndale, MI</div>
+            <div class="hs-card-name">i3Detroit</div>
+            <a href="https://www.i3detroit.org" target="_blank" rel="noopener noreferrer">→ i3detroit.org</a>
+          </div>
+          <div class="hs-card">
+            <div class="hs-card-city">Mesa, AZ</div>
+            <div class="hs-card-name">HeatSync Labs</div>
+            <a href="https://www.heatsynclabs.org" target="_blank" rel="noopener noreferrer">→ heatsynclabs.org</a>
+          </div>
+          <div class="hs-card">
+            <div class="hs-card-city">Madison, WI</div>
+            <div class="hs-card-name">Sector67</div>
+            <a href="https://www.sector67.org" target="_blank" rel="noopener noreferrer">→ sector67.org</a>
+          </div>
+        </div>
+
+        <h3 style="margin: 2.5rem 0 1rem;">> MAPA // HACKERSPACES &amp; RED %27 MUNDIAL</h3>
+        <div id="world-map" style="height:450px; border: 2px solid var(--border-primary); box-shadow: 0 0 0 1px var(--crimson);"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-widgets">
+        <div class="footer-widget">
+          <h3>// REDES SOCIALES</h3>
+          <ul>
+            <li><a href="https://twitter.com/hackmadrid" target="_blank" rel="noopener noreferrer">Twitter / X</a></li>
+            <li><a href="https://mastodon.social/@hackmadrid" target="_blank" rel="noopener noreferrer">Mastodon</a></li>
+            <li><a href="https://t.me/hackmadrid" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+            <li><a href="https://linkedin.com/company/hackmadrid" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://youtube.com/@hackmadrid" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+            <li><a href="https://github.com/HackMadrid" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://twitch.tv/hackmadrid" target="_blank" rel="noopener noreferrer">Twitch</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-widget">
+          <h3>// INFORMACIÓN</h3>
+          <ul>
+            <li><a href="index.html#nosotros">Sobre HackMadrid</a></li>
+            <li><a href="index.html#objetivos">Misión y Valores</a></li>
+            <li><a href="index.html#historia">Historial</a></li>
+            <li><a href="eventos.html#talleres">Talleres</a></li>
+            <li><a href="eventos.html#capture-the-flag">Capture The Flag</a></li>
+            <li><a href="eventos.html#worldparty">WorldParty</a></li>
+            <li><a href="merchdacing.html#donaciones">Donaciones</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-widget">
+          <h3>// CONTACTO</h3>
+          <ul>
+            <li><a href="https://t.me/hackmadrid" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-widget">
+          <h3>// COMUNIDAD</h3>
+          <ul>
+            <li><a href="https://www.meetup.com/hackmadrid-27/" target="_blank" rel="noopener noreferrer">Meetup HackMadrid'</a></li>
+            <li><a href="https://anchor.fm/radio27" target="_blank" rel="noopener noreferrer">Radio%27</a></li>
+            <li><a href="https://blog.hackmadrid.org" target="_blank" rel="noopener noreferrer">Blog</a></li>
+            <li><a href="index.html#comunicaciones">Red %27</a></li>
+            <li><a href="https://gitlab.com/HackMadrid" target="_blank" rel="noopener noreferrer">GitLab</a></li>
+            <li><a href="merchdacing.html">Merchandising</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2018–2026 HackMadrid%27 — Red Internacional Por Ciento 27 (%27)</p>
+        <p>root@hackmadrid:~# <span style="animation: blink 1s step-end infinite; display:inline-block;">█</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Theme Persistence -->
+  <script>
+    (function() {
+      var toggle = document.getElementById('theme-toggle');
+      if (localStorage.getItem('hm-theme') === 'hacker') toggle.checked = true;
+      toggle.addEventListener('change', function() {
+        localStorage.setItem('hm-theme', this.checked ? 'hacker' : 'default');
+      });
+    })();
+  </script>
+
+  <!-- Leaflet Map -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
+  <script>
+    window.addEventListener('load', function() {
+      var mapEl = document.getElementById('spain-map');
+      if (!mapEl || typeof L === 'undefined') return;
+
+      var isHacker = document.getElementById('theme-toggle').checked;
+
+      var lightTiles = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+      var darkTiles  = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+      var attr = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>';
+
+      var map = L.map('spain-map', { zoomControl: true, scrollWheelZoom: false })
+                 .setView([40.2, -3.5], 6);
+
+      var tileLayer = L.tileLayer(isHacker ? darkTiles : lightTiles, {
+        attribution: attr, maxZoom: 14, subdomains: 'abcd'
+      }).addTo(map);
+
+      setTimeout(function() { map.invalidateSize(); }, 200);
+
+      document.getElementById('theme-toggle').addEventListener('change', function() {
+        tileLayer.setUrl(this.checked ? darkTiles : lightTiles);
+      });
+
+      var conferences = [
+        // Enero
+        { name: 'X1RedMasSegura',       city: 'Madrid',           lat: 40.4168, lng: -3.7038, url: 'https://x1redmassegura.com',          month: 'Ene' },
+        { name: 'CyberSeg',             city: 'Alcalá de Henares', lat: 40.4820, lng: -3.3640, url: 'https://cyberseg.es',                 month: 'Ene' },
+        { name: 'Sh3llcon',             city: 'Reinosa',           lat: 43.0050, lng: -4.1360, url: 'https://sh3llcon.es',                 month: 'Ene' },
+        // Febrero
+        { name: 'HackOn',               city: 'Madrid',            lat: 40.4168, lng: -3.7038, url: 'https://hackon.es',                   month: 'Feb' },
+        { name: 'MorterueloCON',        city: 'Cuenca',            lat: 40.0704, lng: -2.1374, url: 'https://morteruelocon.com',           month: 'Feb' },
+        // Marzo
+        { name: 'RootedCON',            city: 'Madrid',            lat: 40.4050, lng: -3.6900, url: 'https://rootedcon.com',               month: 'Mar' },
+        // Abril
+        { name: 'Vicon',                city: 'Vigo',              lat: 42.2314, lng: -8.7124, url: 'https://vicon.gal',                   month: 'Abr' },
+        // Mayo
+        { name: 'Hack-én',              city: 'Jaén',              lat: 37.7796, lng: -3.7849, url: 'https://hack-en.es',                  month: 'May' },
+        { name: 'BSides Barcelona',     city: 'Barcelona',         lat: 41.3851, lng:  2.1734, url: 'https://bsidesbarcelona.com',         month: 'May' },
+        { name: 'Hackron',              city: 'Las Palmas',        lat: 28.1235, lng: -15.4366, url: 'https://hackron.com',                month: 'May' },
+        // Junio
+        { name: 'UAD360',               city: 'Málaga',            lat: 36.7213, lng: -4.4214, url: 'https://uad360.com',                  month: 'Jun' },
+        { name: 'C1b3rwall',            city: 'Ávila',             lat: 40.6567, lng: -4.6882, url: 'https://c1b3rwall.es',               month: 'Jun' },
+        { name: 'EuskalHack',           city: 'San Sebastián',     lat: 43.3183, lng: -1.9812, url: 'https://euskalhack.org',              month: 'Jun' },
+        // Julio
+        { name: 'INCIBE Summer Bootcamp', city: 'León',            lat: 42.5987, lng: -5.5671, url: 'https://incibe.es',                  month: 'Jul' },
+        // Septiembre
+        { name: 'RootedCON Valencia',   city: 'Valencia',          lat: 39.4699, lng: -0.3763, url: 'https://rootedcon.com',              month: 'Sep' },
+        { name: 'MorcillaCONF',         city: 'Burgos',            lat: 42.3440, lng: -3.6970, url: 'https://morcillaconf.es',            month: 'Sep' },
+        // Octubre
+        { name: 'Navaja Negra',         city: 'Albacete',          lat: 38.9943, lng: -1.8585, url: 'https://navajanegra.com',            month: 'Oct' },
+        { name: 'No cON Name',          city: 'Barcelona',         lat: 41.4036, lng:  2.1744, url: 'https://noconname.org',              month: 'Oct' },
+        { name: 'CONPilar',             city: 'Zaragoza',          lat: 41.6488, lng: -0.8891, url: 'https://conpilar.es',                month: 'Oct' },
+        // Noviembre
+        { name: 'HoneyCON',             city: 'Guadalajara',       lat: 40.6297, lng: -3.1649, url: 'https://honeycon.eu',                month: 'Nov' },
+        { name: 'BitUP',                city: 'Alicante',          lat: 38.3452, lng: -0.4810, url: 'https://bitup.es',                   month: 'Nov' },
+        { name: 'AsturCON',             city: 'Asturias',          lat: 43.5528, lng: -5.9175, url: 'https://asturcon.es',               month: 'Nov' },
+        { name: 'SecAdmin',             city: 'Sevilla',           lat: 37.3886, lng: -5.9823, url: 'https://secadmin.es',               month: 'Nov' },
+        { name: 'Jornadas CCN-CERT',    city: 'Madrid',            lat: 40.4300, lng: -3.6800, url: 'https://ccn-cert.cni.es',           month: 'Nov' },
+        // Todo el año
+        { name: 'HackMadrid%27',        city: 'Madrid',            lat: 40.3880, lng: -3.7176, url: 'https://www.meetup.com/hackmadrid-27/', month: 'Todo el año' },
+      ];
+
+      var markerHtml = '<div style="width:16px;height:16px;border-radius:50%;background:#e01c1c;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.5);"></div>';
+      var icon = L.divIcon({ html: markerHtml, className: '', iconSize: [16, 16], iconAnchor: [8, 8] });
+
+      conferences.forEach(function(c) {
+        L.marker([c.lat, c.lng], { icon: icon })
+          .addTo(map)
+          .bindPopup(
+            '<b style="font-size:0.95rem;">' + c.name + '</b><br>' +
+            '<span style="color:#666;font-size:0.82rem;">' + c.city + ' · ' + c.month + '</span><br><br>' +
+            '<a href="https://hackmadrid.com/'&#32;+&#32;c.url&#32;+&#32;'" target="_blank" style="color:#e01c1c;font-weight:700;font-size:0.85rem;">→ Ver web</a>'
+          );
+      });
+    });
+
+    // ── WORLD MAP ───────────────────────────────────────────────
+    window.addEventListener('load', function() {
+      var worldEl = document.getElementById('world-map');
+      if (!worldEl || typeof L === 'undefined') return;
+
+      var isHacker = document.getElementById('theme-toggle').checked;
+      var lightTiles = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+      var darkTiles  = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+      var attr = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>';
+
+      var wmap = L.map('world-map', { zoomControl: true, scrollWheelZoom: false })
+                  .setView([45, -20], 2);
+
+      var wTileLayer = L.tileLayer(isHacker ? darkTiles : lightTiles, {
+        attribution: attr, maxZoom: 12, subdomains: 'abcd'
+      }).addTo(wmap);
+
+      setTimeout(function() { wmap.invalidateSize(); }, 200);
+
+      document.getElementById('theme-toggle').addEventListener('change', function() {
+        wTileLayer.setUrl(this.checked ? darkTiles : lightTiles);
+      });
+
+      var redMarker   = '<div style="width:14px;height:14px;border-radius:50%;background:#e01c1c;border:2px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,0.5);"></div>';
+      var greyMarker  = '<div style="width:12px;height:12px;border-radius:50%;background:#6b7280;border:2px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,0.4);"></div>';
+      var iconRed  = L.divIcon({ html: redMarker,  className: '', iconSize: [14,14], iconAnchor: [7,7] });
+      var iconGrey = L.divIcon({ html: greyMarker, className: '', iconSize: [12,12], iconAnchor: [6,6] });
+
+      var communities27 = [
+        { name: 'HackMadrid%27',  city: 'Madrid, España',        lat: 40.4168, lng: -3.7038, url: 'https://www.meetup.com/hackmadrid-27/' },
+        { name: 'HackMiami',      city: 'Miami, USA',            lat: 25.7617, lng: -80.1918, url: 'https://hackmiami.org' },
+        { name: 'Hack The Bay',   city: 'San Francisco, USA',    lat: 37.7749, lng: -122.4194, url: 'https://www.hackthebay.com' },
+        { name: 'HackBCN\'',     city: 'Barcelona, España',     lat: 41.3851, lng:  2.1734, url: 'https://hackbcn.cat' },
+        { name: 'PacificHackers', city: 'Costa Pacífico, USA',   lat: 37.5000, lng: -122.0500, url: 'https://www.meetup.com/pacifichackers/' },
+      ];
+
+      var hackerspaces = [
+        { name: 'Chaos Computer Club', city: 'Hamburg, Alemania',       lat: 53.5753, lng:  9.9576, url: 'https://www.ccc.de' },
+        { name: 'Metalab',             city: 'Viena, Austria',          lat: 48.2082, lng: 16.3738, url: 'https://metalab.at' },
+        { name: 'c-base',              city: 'Berlín, Alemania',        lat: 52.5107, lng: 13.4216, url: 'https://www.c-base.org' },
+        { name: 'London Hackspace',    city: 'Londres, Reino Unido',    lat: 51.5203, lng: -0.0831, url: 'https://london.hackspace.org.uk' },
+        { name: 'Revspace',            city: 'La Haya, Países Bajos',   lat: 52.0705, lng:  4.3007, url: 'https://revspace.nl' },
+        { name: 'Technologia Incognita', city: 'Ámsterdam, Países Bajos', lat: 52.3667, lng: 4.8945, url: 'https://techinc.nl' },
+        { name: 'HSBXL',               city: 'Bruselas, Bélgica',      lat: 50.8503, lng:  4.3517, url: 'https://hsbxl.be' },
+        { name: 'Labitat',             city: 'Copenhague, Dinamarca',   lat: 55.6761, lng: 12.5683, url: 'https://labitat.dk' },
+        { name: 'TOG',                 city: 'Dublín, Irlanda',         lat: 53.3498, lng: -6.2603, url: 'https://www.tog.ie' },
+        { name: 'Athens Hackerspace',  city: 'Atenas, Grecia',          lat: 37.9838, lng: 23.7275, url: 'https://www.hackerspace.gr' },
+        { name: 'Noisebridge',         city: 'San Francisco, CA',       lat: 37.7627, lng: -122.4194, url: 'https://www.noisebridge.net' },
+        { name: 'NYC Resistor',        city: 'Brooklyn, NY',            lat: 40.6873, lng: -73.9785, url: 'https://www.nycresistor.com' },
+        { name: 'Pumping Station: One', city: 'Chicago, IL',            lat: 41.9057, lng: -87.6505, url: 'https://pumpingstationone.org' },
+        { name: "Artisan's Asylum",    city: 'Somerville, MA',          lat: 42.3925, lng: -71.0802, url: 'https://artisansasylum.com' },
+        { name: 'HacDC',               city: 'Washington, DC',          lat: 38.9089, lng: -77.0425, url: 'https://www.hacdc.org' },
+        { name: 'Denhac',              city: 'Denver, CO',              lat: 39.7392, lng: -104.9903, url: 'https://denhac.org' },
+        { name: 'Dallas Makerspace',   city: 'Dallas, TX',              lat: 32.7767, lng: -96.7970, url: 'https://dallasmakerspace.org' },
+        { name: 'i3Detroit',           city: 'Ferndale, MI',            lat: 42.4606, lng: -83.1352, url: 'https://www.i3detroit.org' },
+        { name: 'HeatSync Labs',       city: 'Mesa, AZ',                lat: 33.4152, lng: -111.8315, url: 'https://www.heatsynclabs.org' },
+        { name: 'Sector67',            city: 'Madison, WI',             lat: 43.0731, lng: -89.4012, url: 'https://www.sector67.org' },
+      ];
+
+      communities27.forEach(function(c) {
+        L.marker([c.lat, c.lng], { icon: iconRed })
+          .addTo(wmap)
+          .bindPopup(
+            '<b style="color:#e01c1c;font-size:0.9rem;">%27 ' + c.name + '</b><br>' +
+            '<span style="color:#666;font-size:0.8rem;">' + c.city + '</span><br><br>' +
+            '<a href="https://hackmadrid.com/'&#32;+&#32;c.url&#32;+&#32;'" target="_blank" style="color:#e01c1c;font-weight:700;font-size:0.82rem;">→ Ver web</a>'
+          );
+      });
+
+      hackerspaces.forEach(function(h) {
+        L.marker([h.lat, h.lng], { icon: iconGrey })
+          .addTo(wmap)
+          .bindPopup(
+            '<b style="font-size:0.9rem;">' + h.name + '</b><br>' +
+            '<span style="color:#666;font-size:0.8rem;">' + h.city + '</span><br><br>' +
+            '<a href="https://hackmadrid.com/'&#32;+&#32;h.url&#32;+&#32;'" target="_blank" style="color:#6b7280;font-weight:700;font-size:0.82rem;">→ Ver web</a>'
+          );
+      });
+    });
+  </script>
+
+</body>
+</html>
